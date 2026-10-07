@@ -371,3 +371,40 @@ a {
   /* Rút ngắn thời gian phản hồi khi bấm trực tiếp */
   transition-duration: 0.08s;
 }
+/* Thiết kế vòng tròn Loading */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background-color: var(--bg-surface, #ffffff);
+  border-radius: var(--radius-md, 10px);
+  border: 1px solid var(--border-color, #dce4f0);
+  margin: 24px 0;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #dce4f0;        
+  border-top-color: #2855a6;       
+  border-radius: 50%;              
+  animation: spin 1s linear infinite; 
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  margin-top: 12px;
+  color: var(--text-muted-color, #52617a);
+  font-size: 0.95rem;
+}

@@ -1,11 +1,30 @@
 ﻿<!DOCTYPE html>
 <html lang="vi">
-<head>
+    <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Góc học tập - AOS Animation</title>
+  
+  <!-- 1. Thêm CSS của AOS qua CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
+  <link rel="stylesheet" href="style.css">
+</head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Homework Tuần 4</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<!-- 2. Thêm JS của AOS qua CDN và khởi tạo -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800, // Thời gian chạy hiệu ứng (tính bằng mili-giây, ví dụ 800ms)
+      once: true,    // Hiệu ứng chỉ chạy 1 lần khi cuộn tới (không lặp lại mỗi lần cuộn lên xuống)
+    });
+  </script>
+</body>
+</html>
 <body>
     <!-- BÀI 3: Smart Navigation Bar & BÀI 4: Nút Dark Mode -->
     <header class="site-header">
@@ -106,4 +125,43 @@
   </svg>
   <span>Gửi tin nhắn</span>
 </button>
+<section class="loading-container" aria-label="Trạng thái tải">
+    <div class="spinner" role="status"></div>
+    <p class="loading-text">Đang tải dữ liệu portfolio...</p>
+  </section>
+  <main class="container">
+    <!-- Hiệu ứng hiện dần và trượt lên -->
+    <section class="intro" data-aos="fade-up" aria-labelledby="intro-title">
+      <h2 id="intro-title">Kế hoạch hôm nay</h2>
+      <p>Chọn một hoạt động, ghi lại điều đã học và chia sẻ với bạn cùng nhóm.</p>
+    </section>
+
+    <section class="activity-list" aria-label="Danh sách hoạt động">
+      <!-- Thẻ xuất hiện trước -->
+      <article class="activity-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>Đọc tài liệu</h3>
+        <p>Ôn lại cú pháp khai báo biến tại <code>:root</code> và cách dùng <code>var()</code>.</p>
+        <a class="action-link" href="#ghi-chu">Xem ghi chú</a>
+      </article>
+
+      <!-- Thẻ xuất hiện sau một chút nhờ delay -->
+      <article class="activity-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Thử thay đổi</h3>
+        <p>Đổi một màu và một khoảng cách trong CSS, rồi quan sát toàn bộ trang.</p>
+        <a class="action-link" href="#ghi-chu">Ghi kết quả</a>
+      </article>
+    </section>
+
+    <section class="note" id="ghi-chu" data-aos="fade-up" aria-labelledby="note-title">
+      <h2 id="note-title">Ghi chú thực hành</h2>
+      <p>Khi hai phần tử dùng cùng một biến, chỉ cần sửa biến đó để cập nhật cả hai.</p>
+    </section>
+  </main>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // Tăng thời gian chạy (1 giây) cho dễ quan sát
+    once: false,    // Lặp lại hiệu ứng mỗi khi cuộn qua lại
+  });
+</script>
 </html>
