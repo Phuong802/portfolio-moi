@@ -124,3 +124,17 @@
     color: var(--text-muted-color);
     background-color: var(--bg-surface);
   }
+.activity-card {
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface);
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.activity-card:hover {
+  transform: translateY(-6px); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
